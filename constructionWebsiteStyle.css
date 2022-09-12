@@ -1,0 +1,1210 @@
+/* ********************************** Global Style ********************************** */
+*
+{
+	box-sizing: border-box;
+	font-family: sans-serif ;
+}
+html , body
+{
+    scroll-behavior: smooth;
+}
+body
+{
+	padding: 0 ;
+	margin: 0 ;
+}
+/* +++++++++++++++++++ section-h3 +++++++++++++++++++ */
+.section-h3
+{
+    margin: 0 ;
+    font-size: 35px ;
+    text-transform: uppercase ;
+    padding-bottom: 5px ;
+    color: #000 ;
+}
+/* ++++++++++++++++ section-h3-line +++++++++++++++++ */
+.section-h3-line
+{
+    display: block ;
+    width: 120px ;
+    height: 2px ;
+    padding: 2px ;
+    background-color: rgb(252,207,0) ;
+}
+/* ++++++++++++++++ section-para1 +++++++++++++++++ */
+.section-para1
+{
+    text-transform: capitalize ;
+    font-size: 16px ;
+    color: #999 ;
+    line-height: 1.5;
+    /* font-weight: bold ;  */
+}
+/* ++++++++++++++++ section-para2 +++++++++++++++++ */
+.section-para2
+{
+    font-size: 16px ;
+    color: #999 ;
+    line-height: 1.5 ; 
+}
+/* ********************************** navbar section ********************************** */
+.navbar
+{
+    position: fixed ;
+    width: 100% ;
+    height: auto ;
+    overflow: hidden;
+    margin: 0px   auto ;
+    z-index: 999 ;
+	background-color: rgba(0,0,0,0.8);
+/*	border: 2px solid #f00;    */
+}
+.navbar .navbarContainer
+{
+	width: 90% ;
+	height: auto;
+	overflow: hidden ;
+	margin: 5px auto ;
+/*	border: 2px solid #0f0;    */
+}
+/* ********** left part : navbar logo *************** */
+.navbar .navbarContainer .navbarLogo 
+{
+	/* ------------- total_width = width + margin_left + margin_right = 28 + 1 + 1 = 30% */
+	width: 28% ;
+ 	float: left ;
+	height: auto ;
+	overflow: hidden ;
+	margin: 0 ;
+	padding: 0px ;
+/*	border: 2px solid #00f ;   */
+}
+/* -------------------------- logo : <img> -------------------------- */
+.navbar .navbarContainer .navbarLogo  .navbarLogoPara .navbarLogoImg
+{
+	float: left ;
+    width: 45px ;
+    height: 45px ;
+	margin-right: 5px ;
+    margin-top: -15px ;
+/*	border: 2px solid #f0f;    */
+}
+/* -------------------------- logo : <p><p> -------------------------- */
+.navbar .navbarContainer .navbarLogo  .navbarLogoPara .logoHeaderSpan
+{
+	float: left ;
+	font-size: 20px;
+	text-transform: uppercase;
+	margin-top: 5px; 
+	font-weight: bold ;
+	color: #fff ;
+/*	border: 2px solid #0f0;    */
+}
+.navbar .navbarContainer .navbarLogo  .navbarLogoPara .logoHeaderSpan .active
+{
+	color: orange ;
+}
+
+/* ############ menubar icon ############ */
+.navbar     .navbarContainer     input
+{
+	position: absolute ;
+	top: 5px ;
+	right: 5px ;
+	display: none ;
+}
+.menubarLabel
+{
+    position: absolute;
+	top:10px; 
+	right: 8px ;
+	cursor: pointer;
+	/* from  "0px" to "970px" في الشاشات المحمول  */
+	display: none ;
+/*	border: 2px solid #ff0;    */
+}
+.navbar .navbarContainer  .menubarLabel .menubarDiv1  ,
+.navbar .navbarContainer  .menubarLabel .menubarDiv2  ,
+.navbar .navbarContainer  .menubarLabel .menubarDiv3  
+{
+	margin: 6px;
+	width: 33px;
+	height: 4px;
+	padding: 1px;
+	background-color: #fff ;
+	/* smooth يحصل التحول بشكل x الي علامة ال menubar icon عشان لما يحصل تحويل لل */
+	transition: 0.4s ;
+}
+.navbar .navbarContainer input:checked ~  .menubarLabel .menubarDiv1  
+{
+	transform: rotate(-45deg) translate(-7px, 7px) ;
+}
+.navbar .navbarContainer input:checked ~  .menubarLabel .menubarDiv2 
+{
+	opacity: 0 ;
+}
+.navbar .navbarContainer input:checked ~  .menubarLabel .menubarDiv3  
+{
+	transform: rotate(45deg) translate(-7px, -7px) ;
+}
+.navbar .navbarContainer input:checked   ~     .links
+{
+	display: block ;
+}
+/* ############ right part : links ########### */
+.navbar  .navbarContainer   .links
+{
+	width: 72% ;
+	float: right;
+	text-align: right ;
+	height: auto ;
+	overflow: hidden ;
+/*	border: 2px solid #00f ;       */
+}
+.navbar  .navbarContainer   .links	ul
+{
+	list-style: none ;
+}
+.navbar  .navbarContainer   .links	ul	li
+{
+/*    position: relative;  */
+	display: inline-block ;
+/*    padding: 5px ; */
+/*    margin: 5px ; */
+}
+.navbar  .navbarContainer   .links	ul	li   a
+{
+    position: relative; 
+	text-decoration: none ;
+	color: #fff ;
+	margin-right: 10px ;
+	font-size: 15px ;
+	font-weight: bold ;
+    padding: 8px ;
+	text-transform: uppercase ;
+/*	border: 2px solid #0ff ;       */
+}
+.navbar  .navbarContainer   .links  	ul	    li       a		img
+{
+	width: 20px ;
+	height: 20px;
+}
+/* ------------------- first span ------------------------ */
+/* ############# first span : before ############# */
+.navbar  .navbarContainer .links    ul  li  a    span:first-child::before
+{
+    content:"";
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:8px;
+    height:8px;
+    border-top:2px solid #D03447;
+    border-left:2px solid #D03447;
+    opacity: 0 ;
+    transition: all 0.2s ease-in-out ;   
+}
+/* ------------------- first span ------------------------ */
+/* ############# first span : after ############# */
+.navbar  .navbarContainer .links    ul  li  a    span:first-child::after
+{
+    content:"";
+    position:absolute;
+    bottom:0px;
+    left:0px;
+    width:8px;
+    height:8px;
+    border-bottom:2px solid #D03447;
+    border-left:2px solid #D03447;
+    opacity: 0 ;
+    transition: all 0.2s ease-in-out ;    
+}
+ /* ------------------- second span ------------------------ */
+/* ############# second span : before ############# */
+.navbar  .navbarContainer .links    ul  li  a    span:last-child::before
+{
+    content:"";
+    position:absolute;
+    top:0px;
+    right:0px;
+    width:8px;
+    height:8px;
+    border-top:2px solid #D03447;
+    border-right:2px solid #D03447;
+    opacity: 0 ;
+    transition: all 0.2s ease-in-out ;   
+}
+/* ------------------- second span ------------------------ */
+/* ############# second span : after ############# */
+.navbar  .navbarContainer .links    ul  li  a    span:last-child::after
+{
+    content:"";
+    position:absolute;
+    bottom:0px;
+    right:0px;
+    width:8px;
+    height:8px;
+    border-bottom:2px solid #D03447;
+    border-right:2px solid #D03447;
+    opacity: 0 ;
+    transition: all 0.2s ease-in-out ;   
+}
+/*############################## hover on navbar ############################### */
+ /* ------------------- first span ------------------------ */
+/* ############# first span : before ############# */
+.navbar  .navbarContainer .links    ul  li   a:hover      span:first-child::before
+{
+    content:"";
+    position:absolute;
+    top:-5px;
+    left:-5px;
+    width:8px;
+    height:8px;
+    border-top:2px solid #D03447;
+    border-left:2px solid #D03447;
+    transition: 0.2s ;
+    opacity: 1 ;
+}
+/* ############# first span : after ############# */
+.navbar  .navbarContainer .links    ul  li  a:hover      span:first-child::after
+{
+    content:"";
+    position:absolute;
+    bottom:-5px;
+    left:-5px;
+    width:8px;
+    height:8px;
+    border-bottom:2px solid #D03447;
+    border-left:2px solid #D03447;
+    transition: 0.2s ;
+    opacity: 1 ;
+}
+ /* ------------------- second span ------------------------ */
+/* ############# second span : before ############# */
+.navbar  .navbarContainer .links    ul  li  a:hover    span:last-child::before
+{
+    content:"";
+    position:absolute;
+    top:-5px;
+    right:-5px;
+    width:8px;
+    height:8px;
+    border-top:2px solid #D03447;
+    border-right:2px solid #D03447;
+    transition: 0.2s ;
+    opacity: 1 ;
+}
+/* ------------------- second span ------------------------ */
+/* ############# second span : after ############# */
+.navbar  .navbarContainer .links    ul  li  a:hover      span:last-child::after
+{
+    content:"";
+    position:absolute;
+    bottom:-5px;
+    right:-5px;
+    width:8px;
+    height:8px;
+    border-bottom:2px solid #D03447;
+    border-right:2px solid #D03447;
+    transition: 0.2s ;
+    opacity: 1 ;
+}
+/* ------------------------------------------- Responsive ------------------------------------------- */
+@media( min-width:0px) and (max-width:886px)
+{
+    .navbar .navbarContainer  .menubarLabel
+    {
+        display: block ;
+    }
+    .navbar .navbarContainer
+    {
+        width: 90% ;
+    }
+    /* ************** logo part ******************** */
+    .navbar .navbarContainer .navbarLogo 
+    {
+        width: 100% ; 
+    }
+    /* ************** links part ******************** */
+    .navbar .navbarContainer  .links
+    {
+        width: 100% ; 
+        display: block ;
+        margin: 10px 0px ; 
+        text-align: center ;
+/*		border: 2px solid #f0f ;  */
+        display: none ;
+    }
+    /* ************** links part ******************** */
+    .navbar     .navbarContainer    .links    ul   li  
+    {
+        display: block ; 
+        margin: 35px 0px ;
+    }
+}
+/* ********************************** header section ********************************** */
+.header
+{
+    position: relative ;        
+    width: 100% ;
+    height: auto ;
+    overflow: hidden ;
+    background-image: url("ConstructionImages/header-bk1.jpeg");
+    background-repeat: no-repeat ;
+    background-size: cover ;
+/*    border: 2px solid #f00 ;    */
+    z-index: 111 ;
+}
+.header    .overlay
+{
+    position: absolute;
+    top: 0 ;
+    left: 0 ;
+    width: 100% ;
+    height: 100% ;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 777 ;  
+}
+.header     .headerContainer
+{
+    position: relative ;    
+    width: 80% ;
+    height: auto;
+    overflow: hidden ;
+    margin: 180px auto ;
+    text-align: center ;
+    z-index: 888 ;  
+}
+.header     .headerContainer    .headerH2
+{
+    font-size: 55px ;
+    text-transform: uppercase ;
+    margin: 5px ;
+    color: orange ;
+}
+.header     .headerContainer    .headerPara
+{
+    color: #fff;
+    padding: 10px ;
+    font-size: 22px ;   
+    line-height: 1.5 ;
+}
+.header     .headerContainer    .headerBtn
+{
+    width: 200px ;
+    height: 50px ;
+    padding: 10px ;
+    border-radius: 30px ;
+    outline:  0 ;
+    font-size: 16px ;
+    text-transform: capitalize ;
+    color: #fff ;
+    background-color: rgb(252,207,0) ;
+    cursor: pointer ;
+    font-weight: bold ;
+    border: 1px solid rgb(252,207,0) ; ; 
+    transition:  0.5s ease-in-out ;
+}
+.header     .headerContainer    .headerBtn:hover
+{
+    background-color: firebrick ; 
+    border: 1px solid firebrick ; 
+}
+/* ------------------------------------------- Responsive ------------------------------------------- */
+@media( min-width:0px) and (max-width:750px)
+{
+    .header     .headerContainer    .headerH2
+    {
+        font-size: 40px ;
+    }
+    .header     .headerContainer    .headerPara
+    {   
+        font-size: 16px ;  
+    }
+    .header     .headerContainer    .headerBtn
+    {
+        width: 150px ;
+        height: 40px ;
+        font-size: 14px ;
+    }
+}
+/* ********************************** about us section ********************************** */
+.aboutUs
+{
+    position: relative; 
+    width: 100% ;
+    height: auto ;
+    overflow: hidden ;
+    background-image: url(ConstructionImages/header-bk2.jpeg);
+    background-repeat: no-repeat ;
+    background-size: cover ;
+    background-position: left;  
+/*    border: 2px solid #0ff ;    */
+}
+.aboutUs    .aboutUsContainer
+{
+    position: relative ;
+    width: 90% ;
+    height: auto ;
+    overflow: hidden ;
+    margin: 0px auto ;
+    padding: 50px 5px ;
+/*    border: 2px solid #f0f ;    */
+    z-index: 555 ;
+}
+.aboutUs    .overlay
+{
+    position: absolute;
+    top: 0 ;
+    left: 0 ;
+    width: 100% ;
+    height: 100% ;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 444 ;  
+}
+/* +++++++++++++++++++ section-h3 +++++++++++++++++++ */
+.aboutUs    .section-h3
+{
+    color: #fff;
+}
+.aboutUs    .aboutUsContainer   .sendMoreBtn
+{
+    display: block ;
+    width: 150px ;
+    height: 40px ;
+    padding: 5px ;
+    background-color: rgb(252,207,0) ;
+    text-transform: capitalize ;
+    border: 1px solid rgb(252,207,0) ; 
+    outline: 0 ;
+    border-radius: 20px ;
+    cursor: pointer ;
+    font-size: 15px ;
+    margin-bottom: 80px ;
+    transition: 0.5s ease-in-out ;
+}
+.aboutUs    .aboutUsContainer   .sendMoreBtn:hover
+{
+    background-color: firebrick ; 
+    border: 1px solid firebrick ; 
+    color: #fff ;
+}
+/* //////////////////////// boxes //////////////////////// */
+.aboutUs    .aboutUsContainer   .aboutBox
+{
+    width: 31.3333% ;
+    float: left ;
+    height: auto ;
+    overflow: hidden ;
+    background-color: #fff ;
+    text-align: center ;
+    box-shadow: 5px  5px 5px #999  ,
+               -5px  5px 5px #999  ,
+                5px -5px 5px #999  ,
+               -5px -5px 5px #999  ;
+                ; 
+/*    border: 2px solid #f0f ; */
+}
+.aboutUs    .aboutUsContainer   .aboutBox:nth-of-type(1)
+{
+    margin-right: 2% ;
+}
+.aboutUs    .aboutUsContainer   .aboutBox:nth-of-type(2)
+{
+    margin-left: 1% ;
+    margin-right: 1% ;
+}
+.aboutUs    .aboutUsContainer   .aboutBox:nth-of-type(3)
+{
+    margin-left: 2% ;
+}
+.aboutUs    .aboutUsContainer   .aboutBox   img
+{
+    width: 100% ;
+}
+.aboutUs    .aboutUsContainer   .aboutBox   .aboutBoxH4
+{
+    margin: 0 ;
+    margin-top: 10px ;
+    text-transform: capitalize ;
+    font-size:20px ;
+    color: #000 ;
+}
+.aboutUs    .aboutUsContainer   .aboutBox   .aboutBoxPara
+{
+    font-size:15px ;
+    color: #666 ;
+    margin: 10px 0px ;
+    padding: 5px ;
+}
+.clearFloat
+{
+    clear: both ;
+}
+/* ------------------------------------------- Responsive ------------------------------------------- */
+@media( min-width:0px) and (max-width:650px)
+{
+   .aboutUs    .aboutUsContainer   .aboutUsPara1
+    {
+        font-size: 15px ;
+    }
+    .aboutUs    .aboutUsContainer   .aboutUsPara2
+    {   
+        font-size: 14px ;
+    }
+     /* //////////////////////// boxes //////////////////////// */
+    .aboutUs    .aboutUsContainer   .aboutBox:nth-of-type(1)    ,
+    .aboutUs    .aboutUsContainer   .aboutBox:nth-of-type(2)    ,
+    .aboutUs    .aboutUsContainer   .aboutBox:nth-of-type(3)    
+    {
+         width: 80% ;
+        float: none ;
+        display: block;
+        padding-bottom: 30px ;
+        margin: 6%  10% ;
+    }
+    .aboutUs    .aboutUsContainer   .aboutBox   .aboutBoxH4
+    {
+        font-size:26px ;
+    }
+    .aboutUs    .aboutUsContainer   .aboutBox   .aboutBoxPara
+    {
+        font-size:18px ;
+    }
+}
+/* ---------------------------------- Responsive --------------------------------- */
+@media( min-width:651px) and (max-width:950px)
+{
+     /* //////////////////////// boxes //////////////////////// */
+    .aboutUs    .aboutUsContainer   .aboutBox
+    {
+        width: 48% ;
+        margin-bottom: 20px ;
+    }
+    .aboutUs    .aboutUsContainer   .aboutBox:nth-of-type(1)
+    {
+        float: left ;
+        margin-left: 0% ;
+        margin-right: 2% ;
+    }
+    .aboutUs    .aboutUsContainer   .aboutBox:nth-of-type(2)
+    {
+        float: right ;
+        margin-left: 2% ;
+        margin-right: 0% ;
+    }
+    .aboutUs    .aboutUsContainer   .aboutBox:nth-of-type(3)
+    {
+        display: block ;
+        float: none ;
+        margin: 0px  ;
+    }   
+}
+/* ********************************** services section ********************************** */
+.services
+{
+    width: 100% ;
+    height: auto ;
+    overflow: hidden ;
+/*    border: 2px solid #0ff ;    */   
+}
+.services   .servicesContainer
+{
+    width: 90% ;
+    height: auto ;
+    overflow: hidden ;
+    margin: 0px auto ;
+    padding: 50px 5px ;
+/*    border: 2px solid #f0f ;    */
+}
+.services   .servicesContainer  .servicesH3
+{
+    margin: 0 ;
+    font-size: 35px ;
+    text-transform: uppercase ;
+    padding-bottom: 5px ;
+    color: #000 ;    
+}
+.services   .servicesContainer  .servicesH3Line
+{
+    display: block ;
+    width: 120px ;
+    height: 2px ;
+    padding: 2px ;
+    background-color: rgb(252,207,0) ;
+}
+.services   .servicesContainer  .servicesPara1
+{
+    text-transform: uppercase ;
+    font-size: 18px ;
+    color: #888 ;
+    margin-top: 40px ;
+    font-weight: bold ;
+}
+/* //////////////////////// boxes : row1 //////////////////////// */
+.services   .servicesContainer  .servicesBox
+{
+    width: 38% ;
+    height: auto ;
+    overflow: hidden ;
+    background-color: #fff ;
+    text-align: center ;
+    margin: 6% ;
+    box-shadow: 5px  5px 5px #999  ,
+               -5px  5px 5px #999  ,
+                5px -5px 5px #999  ,
+               -5px -5px 5px #999  ;
+                ; 
+/*    border: 2px solid #f0f ; */
+}
+.services   .servicesContainer  .servicesBox:nth-of-type(1)
+{
+    float: left ;
+}
+.services   .servicesContainer  .servicesBox:nth-of-type(2)
+{
+    float: right;
+}
+.services   .servicesContainer  .servicesBox  img
+{
+    width: 200px ;
+    height: 200px ; 
+}
+.services   .servicesContainer  .servicesBox  .servicesBoxH4
+{
+    margin: 0 ;
+    margin-top: 10px ;
+    text-transform: capitalize ;
+    font-size:25px ;
+    color: #000 ;
+}
+.services   .servicesContainer  .servicesBox   .servicesBoxPara
+{
+    font-size:16px ;
+    color: #666 ;
+    margin: 10px 0px ;
+    padding: 15px ;
+}
+/* //////////////////////// boxes : row2 //////////////////////// */
+.services   .servicesContainer  .servicesBox2
+{
+    width: 31.3333% ;
+    float: left ;
+    height: auto ;
+    overflow: hidden ;
+    margin: 1% ;
+    padding: 15px ;
+    background-color: #fff ;
+    text-align: center ;
+    background-color: #666 ;
+    cursor: pointer ;
+    border-bottom: 3px solid orange ;
+    transition: 0.5s ease-in-out ;
+/*    border: 2px solid #f0f ; */
+}
+/* //////////////////////// boxes : row2 //////////////////////// */
+.services   .servicesContainer  .servicesBox2:hover
+{
+    background-color: #333 ;
+}
+.services   .servicesContainer  .servicesBox2   img
+{
+    width: 150px ;
+    height: 150px ; 
+}
+.services   .servicesContainer  .servicesBox2  .servicesBox2H4
+{
+    margin: 0 ;
+    margin-top: 10px ;
+    text-transform: capitalize ;
+    font-size:20px ;
+    color: #eee ;
+}
+.services   .servicesContainer  .servicesBox2  .servicesBox2Para
+{
+    font-size:16px ;
+    color: #aaa ;
+    margin: 20px 0px ;
+}
+/* ------------------------------------------- Responsive ------------------------------------------- */
+@media( min-width:0px) and (max-width:650px)
+{
+    .services   .servicesContainer  .servicesPara1
+    {
+        font-size: 16px ;
+    }
+    /* //////////////////////// boxes : row1 //////////////////////// */
+    .services   .servicesContainer  .servicesBox:nth-of-type(1) ,
+    .services   .servicesContainer  .servicesBox:nth-of-type(2)
+    {
+        width: 78% ;
+        float: none ;
+        display: block ;
+        margin: 30px auto ;
+    }
+     /* //////////////////////// boxes : row2 //////////////////////// */
+    .services   .servicesContainer  .servicesBox2
+    {
+        width: 80% ;
+        float: none ;
+        display: block;
+        padding-bottom: 30px ;
+        margin: 6%  10% ;
+    }
+    .services   .servicesContainer  .servicesBox2  .servicesBox2H4
+    {
+        font-size:26px ;
+    }
+   .services   .servicesContainer  .servicesBox2   .servicesBox2Para
+    {
+        font-size:18px ;
+    }
+}
+/* ---------------------------------- Responsive --------------------------------- */
+@media( min-width:651px) and (max-width:950px)
+{
+     /* //////////////////////// boxes : row2 //////////////////////// */
+    .services   .servicesContainer  .servicesBox2
+    {
+        width: 48% ;
+        margin-bottom: 20px ;
+    }
+    .services   .servicesContainer  .servicesBox2:nth-of-type(3)
+    {
+        float: left ;
+        margin-left: 0% ;
+        margin-right: 2% ;
+    }
+    .services   .servicesContainer  .servicesBox2:nth-of-type(2)
+    {
+        float: right ;
+        margin-left: 2% ;
+        margin-right: 0% ;
+    }
+    .services   .servicesContainer  .servicesBox2:nth-of-type(1)
+    {
+        display: block ;
+        float: none ;
+        margin: 0px  ;
+    }   
+}
+/* ********************************** our projects section ********************************** */
+.ourProjects
+{
+    width: 100% ;
+    height: auto ;
+    overflow: hidden ;
+/*    border: 2px solid #0ff ;    */    
+}
+.ourProjects    .ourProjectsContainer
+{
+    width: 90% ;
+    height: auto ;
+    overflow: hidden ;
+    margin: 0px auto ;
+    padding: 50px 5px ;
+/*    border: 2px solid #f0f ;    */   
+}
+.ourProjects    .ourProjectsContainer   .ourProjectsH3
+{
+    margin: 0 ;
+    font-size: 35px ;
+    text-transform: uppercase ;
+    padding-bottom: 5px ;
+    color: #000 ;    
+}
+.ourProjects    .ourProjectsContainer   .servicesH3Line
+{
+    display: block ;
+    width: 80px ;
+    height: 2px ;
+    padding: 2px ;
+    background-color: rgb(252,207,0) ;
+}
+.ourProjects    .ourProjectsContainer   .servicesPara1
+{   
+    text-transform: uppercase ;
+    font-size: 18px ;
+    color: #888 ;
+    margin-top: 40px ;
+    font-weight: bold ;   
+}
+
+
+/*  //////////////////////// boxes  //////////////////////// */
+/* +++++++++++++++ box 1 +++++++++++++++  */
+.ourProjects    .ourProjectsContainer   .ourProjectsBox1    
+{
+    width: 63% ;
+    height: 300px ;
+    float: left ;
+    margin-right: 2% ;
+    margin-left: 0 ;
+    margin-bottom: 20px ;
+}
+/* +++++++++++++++ box 2 +++++++++++++++  */
+.ourProjects    .ourProjectsContainer   .ourProjectsBox2
+{
+    width: 33% ;
+    height: 300px ;
+    float: right;
+    margin-left: 2% ;
+    margin-right: 0 ;
+    margin-bottom: 20px ;
+}
+/* +++++++++++++++ box 3 +++++++++++++++  */
+.ourProjects    .ourProjectsContainer   .ourProjectsBox3 ,
+.ourProjects    .ourProjectsContainer   .ourProjectsBox4 ,
+.ourProjects    .ourProjectsContainer   .ourProjectsBox5
+{
+    width: 31.3333% ;
+    height: 300px ;
+    float: left ;
+    margin-bottom: 20px ;
+}
+.ourProjects    .ourProjectsContainer   .ourProjectsBox3 
+{
+    margin-left: 0 ;
+    margin-right: 2% ;
+}
+.ourProjects    .ourProjectsContainer   .ourProjectsBox4 
+{
+    margin-left: 1% ;
+    margin-right: 1% ;
+}.ourProjects    .ourProjectsContainer   .ourProjectsBox5
+{
+    margin-left: 2% ;
+    margin-right: 0% ;
+}
+/* +++++++++++++++ box 4 +++++++++++++++  */
+.ourProjects    .ourProjectsContainer   .ourProjectsBox6
+{
+    width: 33% ;
+    height: 300px ;
+    float: left;
+    margin-left: 0 ;
+    margin-right: 2% ;
+}
+/* +++++++++++++++ box 7 +++++++++++++++  */
+.ourProjects    .ourProjectsContainer   .ourProjectsBox7
+{
+    width: 63% ;
+    height: 300px ;
+    float: right;
+    margin-left: 2% ;
+    margin-right: 0 ;
+}
+.ourProjects    .ourProjectsContainer   img
+{
+    width: 100% ;
+    height: 100% ;
+}
+/* ---------------------------------- Responsive --------------------------------- */
+@media( min-width:0px) and (max-width:650px)
+{
+    /* +++++++++++++++ box 3 +++++++++++++++  */
+    .ourProjects    .ourProjectsContainer   .ourProjectsBox1 ,
+    .ourProjects    .ourProjectsContainer   .ourProjectsBox2 ,
+    .ourProjects    .ourProjectsContainer   .ourProjectsBox3 ,
+    .ourProjects    .ourProjectsContainer   .ourProjectsBox4 ,
+    .ourProjects    .ourProjectsContainer   .ourProjectsBox5 ,
+    .ourProjects    .ourProjectsContainer   .ourProjectsBox6 ,
+    .ourProjects    .ourProjectsContainer   .ourProjectsBox7
+    {
+        width: 98% ;
+        height: 300px ;
+        float: left ;
+        margin-bottom: 50px ;
+        margin: 1% ;
+    }
+}
+@media( min-width:651px) and (max-width:900px)
+{
+    /* +++++++++++++++ box 3 +++++++++++++++  */
+    .ourProjects    .ourProjectsContainer   .ourProjectsBox1 ,
+    .ourProjects    .ourProjectsContainer   .ourProjectsBox2 ,
+    .ourProjects    .ourProjectsContainer   .ourProjectsBox3 ,
+    .ourProjects    .ourProjectsContainer   .ourProjectsBox4 ,
+    .ourProjects    .ourProjectsContainer   .ourProjectsBox5 ,
+    .ourProjects    .ourProjectsContainer   .ourProjectsBox6 ,
+    .ourProjects    .ourProjectsContainer   .ourProjectsBox7
+    {
+        width: 48% ;
+        height: 300px ;
+        float: left ;
+        margin-bottom: 30px ;
+        margin: 1% ;
+    }
+}
+/* ##################################### start testimonials #################################### */
+.testim
+{
+    position: relative; 
+    height: 270px ;
+    overflow: hidden ; 
+    background-color: rgb(34,34,34);
+    /* border: 2px solid #f00;  */
+}
+.testim	  ul.container
+{
+    width: 400% ;
+    height: auto ;
+    list-style: none ;
+    padding: 0 ;
+    transition: all 0.8s ease-in-out ;
+}
+.testim	    .container	li.clients
+{
+    width: 25% ;
+    height: auto ;
+    float: left ;
+    text-align: center ;
+	color: #fff ;
+	font-size: 20px ;
+    /* border: 2px solid #ff0 ;     */
+}
+.testim		.clients	img
+{
+	width: 100px ;
+	height: 100px ;
+	border-radius: 50% ;
+}
+.testim		.clients	.testimPara
+{
+	line-height: 1.5 ;
+	font-style: italic ;
+}
+/* arrows of testimonials */
+.testim		 	.fa-chevron-left	,
+.testim		 	.fa-chevron-right
+{
+	position: absolute ;
+	top: 50% ;
+	color: #999 ;
+	cursor: pointer ;
+	transition: all 0.5s ease-in-out ;
+}
+/* arrows of testimonials */
+.testim	 	.fa-chevron-left:hover	,
+.testim		.fa-chevron-right:hover
+{
+	color: rgb(247,96,14);
+}
+/* left arrow of testimonials */
+.testim		 	.fa-chevron-left
+{	
+	left: 0 ;
+}
+/* rgiht arrow of testimonials */
+.testim		 	.fa-chevron-right
+{
+	right: 0 ;
+}
+.hideArrow
+{
+    opacity: 0 ;
+}
+/* ---------------------------------- Responsive --------------------------------- */
+@media( min-width:0px) and (max-width:750px)
+{
+    .testim
+    {
+        height: 300px ;
+    }
+    .testim	    .container	li.clients
+    {
+        padding: 0px 20px;
+    }
+    .testim		.clients	.testimPara
+    {
+        font-size: 16px ;
+        /* border: 2px solid #f00 ;  */
+    } 
+    .testim		.clients  .testimSpan
+    {
+        font-size: 14px ;
+    }
+}
+/* ********************************** contact Us section ********************************** */
+.contactUs
+{
+    width: 100% ;
+    height: auto ;
+    overflow: hidden ;
+    /* border: 2px solid #f00 ;           */
+}
+.contactUs      .contactUsContainer
+{
+    width: 80% ;
+    height: auto ;
+    overflow: hidden ;
+    margin: 30px auto ;
+    text-align: center ;
+    /* border: 2px solid #0f0 ;                */
+}
+.contactUs      .contactUsContainer     .formContainer
+{
+    width: 80% ;
+    margin: 50px  auto ;
+    box-shadow: 5px 5px 10px #999 ;
+    text-align: left ;
+    padding: 10px ;
+}
+.contactUs      .contactUsContainer     .formContainer  form    input       ,
+.contactUs      .contactUsContainer     .formContainer  form    textarea
+{
+    width: 48% ;
+    margin-bottom: 20px ;
+    padding: 15px; 
+    padding-left: 5px ;
+    border: 0 ;
+    outline: 0 ;
+    font-size: 16px ; 
+    border-bottom: 2px solid #ccc ; 
+    outline: 0 ;
+}
+.contactUs      .contactUsContainer     .formContainer  form    input#firstNameId       ,
+.contactUs      .contactUsContainer     .formContainer  form    input#passwordNameId
+{
+    float: left ;
+    margin-left: 0 ;
+    margin-right: 2% ;
+}
+.contactUs      .contactUsContainer     .formContainer  form    input#lastNameId    ,
+.contactUs      .contactUsContainer     .formContainer  form    input#emailNameId
+{
+    width: 48% ;
+    float: right;
+    margin-left: 2% ;
+    margin-right: 0 ;   
+}
+.contactUs      .contactUsContainer     .formContainer  form    textarea
+{
+    width: 100% ;
+    height: 150px ;
+    margin: 0 ; 
+    padding-left: 5px ;
+}
+.contactUs      .contactUsContainer     .formContainer  form    .contactBtn
+{
+    display: block ;
+    width: 80% ;
+    padding: 12px ;
+    text-align: center ;
+    margin: 20px auto;
+    border-radius: 30px ;
+    cursor: pointer ;
+    text-transform: capitalize ;
+    font-size: 16px ;
+    background-color:  rgb(252,207,0) ; 
+    border: 1px solid  rgb(252,207,0) ; 
+    transition: 0.5s ease-in-out ;
+}
+.contactUs      .contactUsContainer     .formContainer  form    .contactBtn:hover
+{
+    background-color: firebrick ; 
+    border: 1px solid firebrick ; 
+    color: #fff ;
+}
+/* ---------------------------------- Responsive --------------------------------- */
+@media( min-width:0px) and (max-width:750px)
+{
+    .contactUs      .contactUsContainer     
+    {
+        width: 100% ;
+    }
+    .contactUs      .contactUsContainer     .contactUsH3
+    {
+        font-size: 35px ;   
+    }
+    .contactUs      .contactUsContainer     .contactUsPara
+    {
+        font-size: 16px ;
+    }
+    .contactUs      .contactUsContainer     .formContainer
+    {
+        width: 90% ;
+        margin: 50px  auto ;
+    }
+
+    .contactUs      .contactUsContainer     .formContainer  form    input#firstNameId       ,
+    .contactUs      .contactUsContainer     .formContainer  form    input#passwordNameId    ,
+    .contactUs      .contactUsContainer     .formContainer  form    input#lastNameId        ,
+    .contactUs      .contactUsContainer     .formContainer  form    input#emailNameId       ,
+    .contactUs      .contactUsContainer     .formContainer  form    textarea
+    {
+        width: 90% ;
+        margin: 5% ;
+        float: none ;
+    }
+
+}
+/* ********************************** footer section ********************************** */
+.footer
+{
+    width: 100% ;
+    height: auto ;
+    overflow: hidden ;
+    background-color: #333 ;
+/*    border: 2px solid #f00 ;    */
+}
+.footer     .footerContainer
+{
+    width: 90% ;
+    height: auto ;
+    overflow: hidden ;
+    margin: 10px auto ;
+    text-align: center ;
+/*    border: 2px solid #0f0 ;        */
+}
+.footer     .footerContainer       .footerPara
+{
+    font-size: 18px ;
+    color: #ccc ;
+    text-transform: capitalize ;
+    margin: 0 ;
+    margin-bottom: 5px ;
+    line-height: 1.5 ;
+}
+.footer     .footerContainer       .footerPara      .footerSpan
+{
+    font-weight: bold ;
+    color: orange ;
+/*    border: 2px solid #00f ;     */
+}
+/* -------------------- footer icons container -------------------- */
+.footer     .footerContainer    .footerIcons
+{
+    margin: 0 ;
+}
+/* ------------- footer icons container : <i></i> ------------------ */
+.footer     .footerContainer    .footerIcons    i
+{
+    display: inline-block ;
+    width: 35px ;
+    height: 35px ;
+    line-height: 35px ; 
+    padding: 2px ;  
+    font-size: 20px ;
+    margin: 10px ;
+    border-radius: 50% ;
+    cursor: pointer ;
+    background-color: #fff ;
+    transition: 0.2s ease-in-out ;
+}
+/* ----------------------- when hover on icons ----------------------- */
+.footer     .footerContainer    .footerIcons  .fa-facebook:hover
+{
+    background-color: #3b5992 ;      
+    color: #fff ;
+}
+.footer     .footerContainer    .footerIcons  .fa-twitter:hover
+{
+    background-color: #55acee ;      
+    color: #fff ;
+}
+.footer     .footerContainer    .footerIcons  .fa-google-plus:hover
+{
+    background-color: #dc4e41  ;      
+    color: #fff ;
+}
